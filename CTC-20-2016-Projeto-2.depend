@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1462903312 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-2\main.cpp
+	<stdio.h>
+	"Graph.h"
+	"BruteForceTSP.h"
+
+1462903129 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-2\include\graph.h
+
+1462902626 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-2\include\bruteforcetsp.h
+	"Graph.h"
+	<vector>
+
+1462903129 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-2\src\bruteforcetsp.cpp
+	"BruteForceTSP.h"
+	<stdio.h>
+
+1462903348 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-2\src\graph.cpp
+	"Graph.h"
+	<stdio.h>
+	<stdlib.h>
+	<vector>
+	<iostream>
+	<algorithm>
+	<time.h>
+
+1462903129 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-2\src\heldkarptsp.cpp
+	"HeldKarpTSP.h"
+	<stdio.h>
+
+1462902977 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-2\include\heldkarptsp.h
+	"Graph.h"
+	<vector>
+
