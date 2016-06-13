@@ -1,6 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include <stdio.h>
 
 class Graph
 {
@@ -13,7 +14,7 @@ class Graph
         int getNumEdges() { return numEdges; }
         int getEdge(int i, int j);
         void setEdge(int i, int j, int value);
-        void printMatrix();
+        void printMatrix(FILE* out);
     protected:
     private:
         int ** adjMatrix;

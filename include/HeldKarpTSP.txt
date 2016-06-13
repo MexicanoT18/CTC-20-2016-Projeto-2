@@ -1,0 +1,23 @@
+#pragma once
+
+#include "Graph.h"
+#include <vector>
+using namespace std;
+
+class HeldKarpTSP
+{
+public:
+	HeldKarpTSP();
+	void computeTour(Graph & graph);
+	vector<int> & getTour() { return tour; }
+	int getCost() { return cost; }
+	virtual ~HeldKarpTSP();
+protected:
+private:
+	void printTour();
+	void initializeArray(pair<int,int> ** dparray);
+	int DP(int pos, int bitmask,Graph & graph, pair<int,int> ** dparray);
+	vector<int> tour;
+	int cost;
+	int numNodes;
+};

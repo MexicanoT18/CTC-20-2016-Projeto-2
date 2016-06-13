@@ -28,11 +28,9 @@ Graph::Graph(int numNodes)
 
 void Graph::buildRandomGraph(int numNodes, int numEdges)
 {
-    if (numNodes != this->numNodes){
-        deleteAdjMatrix();
-        adjMatrix = allocateSquareMatrix(numNodes);
-        this->numNodes = numNodes;
-    }
+    deleteAdjMatrix();
+    adjMatrix = allocateSquareMatrix(numNodes);
+    this->numNodes = numNodes;
 
     fillAdjMatrix(-1);
 
@@ -42,6 +40,7 @@ void Graph::buildRandomGraph(int numNodes, int numEdges)
             pairs.push_back(make_pair(i, j));
         }
     }
+    random_shuffle(pairs.begin(), pairs.end());
 
     int pairToChoose;
     int u, v;
@@ -74,7 +73,7 @@ void Graph::setEdge(int i, int j, int value)
 
 void Graph::deleteAdjMatrix()
 {
-    if (adjMatrix == NULL) return;
+    if (adjMatrix == NULL || numNodes <= 0) return;
 
     for(int i = 0; i < numNodes; i++){
         delete[] adjMatrix[i];
@@ -116,20 +115,20 @@ void Graph::fillAdjMatrix(int n)
     }
 }
 
-void Graph::printMatrix()
+void Graph::printMatrix(FILE* out)
 {
-    printf("|ij|");
-    for(int i=0; i<numNodes; i++){
-        printf("%2d|", i);
-    }
-    printf("\n");
-    for(int i=0; i<numNodes; i++){
-        printf("|%2d|", i);
-        for(int j=0; j<numNodes; j++){
-            printf("%2d|", getEdge(i,j));
-        }
-        printf("\n");
-    }
+	fprintf(out,"|ij|");
+	for (int i = 0; i<numNodes; i++) {
+		fprintf(out,"%2d ", i);
+	}
+	fprintf(out,"\n");
+	for (int i = 0; i<numNodes; i++) {
+		fprintf(out," %2d ", i);
+		for (int j = 0; j<numNodes; j++) {
+			fprintf(out,"%2d ", getEdge(i, j));
+		}
+		fprintf(out,"\n");
+	}
 }
 
 Graph::~Graph()

@@ -40,7 +40,6 @@ void BruteForceTSP::backTrack(int depth, int node, Graph & graph, int currentCos
             cost = currentCost + graph.getEdge(node, 0);
             tour = currentTour;
             tour.push_back(0);
-            printTour();
         }
     }
 

@@ -3,6 +3,7 @@
 
 #include "Graph.h"
 #include <vector>
+#include <iostream>
 using namespace std;
 
 class HeldKarpTSP
@@ -16,9 +17,13 @@ class HeldKarpTSP
     protected:
     private:
         void printTour();
+        void initializeArray();
+        int DP(int pos, int bitmask, Graph & graph);
+        vector< vector< pair<int,int> > > dparray;
         vector<int> tour;
         int cost;
         int numNodes;
+        int maxsize;
 };
 
 #endif // HELDKARPTSP_H
